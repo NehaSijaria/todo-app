@@ -1,10 +1,10 @@
 import React from 'react'
 
 export default function Navbar(props) {
-  const { title, status } = props;
+  // const { title, status } = props;
   return (
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">{title} {status}</a>
+  <a class="navbar-brand" href="#">{props.title} {props.status}</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
