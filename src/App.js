@@ -1,10 +1,14 @@
 // import './App.css';
 import Navbar from './components/Navbar';
+import TodoItems from './components/TodoItems';
+import Footer from './components/Footer';
 
 function App() {
   return (
     <div>
-      <Navbar />
+      <Navbar title="MyTodoApp" />
+      <TodoItems />
+      <Footer />
     </div>
   );
 }
