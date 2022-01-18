@@ -1,4 +1,4 @@
-// import './App.css';
+import './App.css';
 import Navbar from './components/Navbar';
 import TodoItems from './components/TodoItems';
 import Footer from './components/Footer';
@@ -6,7 +6,8 @@ import Footer from './components/Footer';
 function App() {
   return (
     <div>
-      <Navbar title="MyTodoApp" />
+      {/* sending boolean to child comp */}
+      <Navbar title="TodoApp" searchBar={false}/>
       <TodoItems />
       <Footer />
     </div>
