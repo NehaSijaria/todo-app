@@ -7,7 +7,7 @@ function App() {
   return (
     <div>
       {/* sending boolean to child comp */}
-      <Navbar title="TodoApp" searchBar={false}/>
+      <Navbar title={true} searchBar={false}/>
       <TodoItems />
       <Footer />
     </div>
