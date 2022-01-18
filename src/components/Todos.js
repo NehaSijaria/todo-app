@@ -1,9 +1,11 @@
 import React from 'react'
 
 export default function Todo() {
+  
   return (
-    <div>
-      Todo Comp
+    <div className='container'>
+      <h3>Todos List</h3>       
+      
     </div>
   )
 }
