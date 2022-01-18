@@ -2,15 +2,15 @@ import React from "react";
 import PropTypes from 'prop-types';
 
 export default function Navbar(props) {
-  // const { title, status } = props;
+  // const { title, searchBar } = props;
   return (
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container-fluid">
-        <a class="navbar-brand" href="#">
-          {props.title}
+        <a className="navbar-brand" href="#">
+          {props.title} No:{props.number}
         </a>
         <button
-          class="navbar-toggler"
+          className="navbar-toggler"
           type="button"
           data-toggle="collapse"
           data-target="#navbarSupportedContent"
@@ -18,18 +18,18 @@ export default function Navbar(props) {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul className="navbar-nav mr-auto">
+            <li className="nav-item active">
+              <a className="nav-link" href="#">
                 Home{" "}
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
+            <li className="nav-item">
+              <a className="nav-link" href="#">
                 About
               </a>
             </li>
@@ -38,23 +38,23 @@ export default function Navbar(props) {
           {/* js inside {}, if searchBar is true show form else show "No SearchBar" using ternary operator */}
           {/* {
       props.searchBar? 
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        <form className="form-inline my-2 my-lg-0">
+          <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
+          <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form> 
       : "No searchBar" 
     } */}
           {/* 2nd way- execute second function only when left side is true */}
           {props.searchBar && (
-            <form class="form-inline my-2 my-lg-0">
+            <form className="form-inline my-2 my-lg-0">
               <input
-                class="form-control mr-sm-2"
+                className="form-control mr-sm-2"
                 type="search"
                 placeholder="Search"
                 aria-label="Search"
               />
               <button
-                class="btn btn-outline-success my-2 my-sm-0"
+                className="btn btn-outline-success my-2 my-sm-0"
                 type="submit"
               >
                 Search
@@ -66,9 +66,15 @@ export default function Navbar(props) {
     </nav>
   );
 }
+//Giving default props:in-case props not provided
+Navbar.defaultProps = {
+  // title:"My default Title",
+  searchBar: false
+}
 
 // defining types of properties to make app robust, if you give anything eg:'number' instead; it print but give error in console :  err.name = 'Invariant Violation'; 
 //Warning: Failed prop type: Invalid prop `title` of type `boolean` supplied to `Navbar`, expected `string`.
 Navbar.propTypes = {
-  title: PropTypes.string
+  title: PropTypes.string,
+  searchBar: PropTypes.bool
 }

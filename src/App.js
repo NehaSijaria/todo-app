@@ -7,7 +7,8 @@ function App() {
   return (
     <div>
       {/* sending boolean to child comp */}
-      <Navbar title={true} searchBar={false}/>
+      {/* <Navbar title="TodoApps" searchBar={false}/> */}
+      <Navbar title="TodoApps" number={1} />
       <TodoItems />
       <Footer />
     </div>
