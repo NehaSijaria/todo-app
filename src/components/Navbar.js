@@ -76,5 +76,5 @@ Navbar.defaultProps = {
 //Warning: Failed prop type: Invalid prop `title` of type `boolean` supplied to `Navbar`, expected `string`.
 Navbar.propTypes = {
   title: PropTypes.string,
-  searchBar: PropTypes.bool
+  searchBar: PropTypes.bool.isRequired
 }
