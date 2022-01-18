@@ -1,6 +1,6 @@
 import './App.css';
 import Navbar from './components/Navbar';
-import TodoItems from './components/TodoItems';
+import TodoItems from './components/TodoItem';
 import Footer from './components/Footer';
 
 function App() {

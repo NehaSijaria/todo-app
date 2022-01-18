@@ -77,4 +77,5 @@ Navbar.defaultProps = {
 Navbar.propTypes = {
   title: PropTypes.string,
   searchBar: PropTypes.bool.isRequired
+  // make it required,if default prop is not provided
 }
