@@ -6,7 +6,7 @@ import Footer from './components/Footer';
 function App() {
   return (
     <div>
-      <Navbar title="MyTodoApp" status="In-progress"/>
+      <Navbar title="MyTodoApp" />
       <TodoItems />
       <Footer />
     </div>
