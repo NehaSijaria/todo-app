@@ -1,6 +1,6 @@
 import './App.css';
 import Navbar from './components/Navbar';
-import TodoItems from './components/TodoItem';
+import Todos from './components/Todos';
 import Footer from './components/Footer';
 
 function App() {
@@ -22,7 +22,7 @@ function App() {
       {/* <Navbar title="TodoApps" searchBar={false}/> */}
       <Navbar title="TodoApps" number={1} />
       {/* passing todos from parent */}
-      <TodoItems myTodos={allTodos}/>
+      <Todos myTodos={allTodos}/>
       <Footer />
     </div>
   );
