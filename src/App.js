@@ -22,7 +22,7 @@ function App() {
       {/* sending boolean to child comp */}
       {/* <Navbar title="TodoApps" searchBar={false}/> */}
       <Navbar title="TodoApps" number={1} />
-      {/* passing todos from parent */}
+      {/* passing todos from parent to child Todo comp */}
       <Todos myTodos={allTodos}/>
       <Footer />
       {/* <Example title="Mytitleshow" status={true} num={5}/> */}
