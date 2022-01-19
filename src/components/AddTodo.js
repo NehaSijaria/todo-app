@@ -5,8 +5,13 @@ export default function AddTodo(props) {
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
 
-  const submit = () => {
-
+  const submit = (e) => {
+    e.preventDefault();
+    if(!title || !desc) {
+      alert('Title/Desc cant be blank')
+    }
+    //coming via props from parent App.js
+    props.addTodo(title,desc);
   }
   return (
     <div className="container my-3">
