@@ -3,8 +3,8 @@ import './footer.css';
 
 export default function Footer() {
   let footerStyle = {
-    position: "absolute",
-    top:"100vh",
+    position: "relative",
+    top:"70",
     width:"100%",
     // backgroundColor:"yellow"
    
