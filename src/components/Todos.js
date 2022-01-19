@@ -8,10 +8,11 @@ export default function Todo(props) {
       <h3>Todos List</h3>  
       {/* sendng first todo */}
       {/* <TodoItem todo={props.allTodos[1]}/>  */}
+      {/* when u render array in UI using map fn : unique key is reqd: warning: Each child in a list should have a unique "key" prop. */}
       {props.allTodos.map((todo) => {
         console.log('Log todo--', todo);
         // return <h1>{todo.title}</h1> if u wana return something here
-        return <TodoItem singleTodo={todo} deleteMe={props.onDelete} />
+        return <TodoItem key={todo.id} singleTodo={todo} deleteMe={props.onDelete} />
            //if u have more than 1 element to return
           // return (
           //   <>
