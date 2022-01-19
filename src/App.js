@@ -8,7 +8,12 @@ import AddTodo from './components/AddTodo';
 // import Example from './components/Example';
 
 function App() {
-
+  let initTodo;
+  if(localStorage.getItem("myTodos") === null){
+    initTodo = []
+  } else {
+    initTodo = JSON.parse(localStorage.getItem(myTodos))
+  }
   // setTodos is to update todo 
 //passing todo argument(Actual val)to deleteMe Fn in TodoItem
 const deleteTodo = (ekTodo) => {
@@ -17,6 +22,7 @@ const deleteTodo = (ekTodo) => {
     console.log('eachTodo=',eachTodo);
     return eachTodo!==ekTodo;
   }))
+  localStorage.getItem("myTodos",JSON.stringify(myTodos))
 }
 
 //Adding Todo :
@@ -31,29 +37,17 @@ const addTodo = (title, desc) => {
   // add my new todo to the list
   setmyTodos([...myTodos, nowAddTodo])
   console.log(nowAddTodo)
+
+  //if no items in local storage, then set them
+  if(localStorage.getItem("myTodos")){
+    localStorage.setItem("myTodos", JSON.stringify(myTodos))
+  }
+
 }
 
-  const [myTodos, setmyTodos] = useState([
-    {
-      id:1,
-      title:'Shopping',
-      desc:'Job 1: Shop Groceries'
-    },
-    {
-      id:2,
-      title:'Cleaning',
-      desc:'Job 2: Clean up the Room'
-    },
-    {
-      id:3,
-      title:'Tracking',
-      desc:'Job 3: Rracking up the parcels'
-    }
-  ])
+//1.delete all prev todos, so we can store all them in local storage
+  const [myTodos, setmyTodos] = useState(initTodo)
 
-
-
-  
   return (
     <div>
       {/* sending boolean to child comp */}
@@ -63,7 +57,7 @@ const addTodo = (title, desc) => {
       {/* addTodo function is sending to AddTodo Comp */}
       <AddTodo addTodo={addTodo}/>
       <Todos allTodos={myTodos} onDelete={deleteTodo}/>
-      <Footer />
+      {/* <Footer /> */}
       {/* <Example title="Mytitleshow" status={true} num={5}/> */}
     </div>
   );
