@@ -5,7 +5,7 @@ import Footer from './components/Footer';
 // import Example from './components/Example';
 
 function App() {
-  const allTodos =[
+  const myTodos =[
     {
       id:1,
       title:'Shopping',
@@ -23,7 +23,7 @@ function App() {
       {/* <Navbar title="TodoApps" searchBar={false}/> */}
       <Navbar title="TodoApps" number={1} />
       {/* passing todos from parent to child Todo comp */}
-      <Todos myTodos={allTodos}/>
+      <Todos allTodos={myTodos}/>
       <Footer />
       {/* <Example title="Mytitleshow" status={true} num={5}/> */}
     </div>
