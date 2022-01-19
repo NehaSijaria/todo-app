@@ -3,6 +3,7 @@ import React from 'react';
 // destructring props
 export default function TodoItem({singleTodo, deleteMe}) {
   // console.log(todo); // getting first todo obj from Todo comp
+  console.log('singleTodo === ', singleTodo);
   return (
     <div className='container'>
       
