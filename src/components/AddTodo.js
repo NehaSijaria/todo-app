@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 export default function AddTodo(props) {
   // empty title and desc
-  const [title, settitle] = useState("");
+  const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
 
   const submit = () => {
@@ -12,12 +12,13 @@ export default function AddTodo(props) {
     <div className="container my-3">
       <h3> Add Todo</h3>
       {/* call this button - onSubmit */}
-      <form>
+      <form onSubmit={submit}> 
         <div className="mb-3">
-          <label for="title">Todo Title</label>
+          <label htmlFor="title">Todo Title</label>
           <input
             type="text"
             value={title}
+            onChange={e=> setTitle(e.target.value)}
             className="form-control"
             id="exampleInputEmail1"
             aria-describedby="emailHelp"
@@ -26,10 +27,10 @@ export default function AddTodo(props) {
           
         </div>
         <div className="mb-3">
-          <label for="desc">Todo Description</label>
+          <label htmlFor="desc">Todo Description</label>
           <input
             type="text"
-            value={desc}
+            value={desc} onChange={e=> setDesc(e.target.value)}
             className="form-control"
             id="desc"
             placeholder="description"
