@@ -5,6 +5,11 @@ import Footer from './components/Footer';
 // import Example from './components/Example';
 
 function App() {
+
+  const deleteTodo = () => {
+    console.log('I am running on Deletion')
+  }
+  
   const myTodos =[
     {
       id:1,
@@ -23,7 +28,7 @@ function App() {
       {/* <Navbar title="TodoApps" searchBar={false}/> */}
       <Navbar title="TodoApps" number={1} />
       {/* passing todos from parent to child Todo comp */}
-      <Todos allTodos={myTodos}/>
+      <Todos allTodos={myTodos} onDelete={deleteTodo}/>
       <Footer />
       {/* <Example title="Mytitleshow" status={true} num={5}/> */}
     </div>

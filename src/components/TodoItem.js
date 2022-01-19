@@ -1,14 +1,15 @@
 import React from 'react';
 
-
-export default function TodoItem({singleTodo}) {
+// destructring props
+export default function TodoItem({singleTodo, deleteMe}) {
   // console.log(todo); // getting first todo obj from Todo comp
   return (
     <div className='container'>
       
       <h4 className='tex-center my-3'>{singleTodo.title}</h4>
       <p>{singleTodo.desc}</p>
-      <button className='btn btn-danger'>Click Me</button>
+      <button className='btn btn-danger' onClick={deleteMe}>Delete Me</button>
+      {/* when I click button Run a function to delete todo */}
     </div>
   )
 }
