@@ -4,7 +4,7 @@ import './footer.css';
 export default function Footer() {
   let footerStyle = {
     position: "absolute",
-    top:"90vh",
+    top:"100vh",
     width:"100%",
     // backgroundColor:"yellow"
    
