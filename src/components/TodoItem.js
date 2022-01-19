@@ -8,9 +8,14 @@ export default function TodoItem({singleTodo, deleteMe}) {
       
       <h4 className='tex-center my-3'>{singleTodo.title}</h4>
       <p>{singleTodo.desc}</p>
-      <button className='btn btn-danger' onClick={deleteMe(singleTodo)}>Delete Me</button>
+      {/* <button className='btn btn-danger' onClick={deleteMe(singleTodo)}>Delete Me</button> */}
       {/* when I click button Run a function to delete todo 
-      Fn hiring automatically without clicking button if we pass argument like this, if no arg passed it will run onlly on click*/}
+      Fn hiring automatically without clicking button if we pass argument like this, if no arg passed it will run only on click*/}
+      {/* fun() == calling fn; fn == passing fn */}
+      {/* so if we wana pass parametr to fn , calling fn() gives you errorwe need to make it arrow fn and call fn as callback, ** fn automatically called on rendering, while making arrow fn calling this Fn by refrence not */}
+      {/* on Click is passing while deleteme() is calling */}
+      {/* when u pass arrow fn, deleteme called but not directly */}
+      <button className='btn btn-danger' onClick={() => deleteMe(singleTodo)}>Delete Me</button>
     </div>
   )
 }
