@@ -2,6 +2,7 @@ import './App.css';
 import Navbar from './components/Navbar';
 import Todos from './components/Todos';
 import Footer from './components/Footer';
+// import Example from './components/Example';
 
 function App() {
   const allTodos =[
@@ -24,6 +25,7 @@ function App() {
       {/* passing todos from parent */}
       <Todos myTodos={allTodos}/>
       <Footer />
+      {/* <Example title="Mytitleshow" status={true} num={5}/> */}
     </div>
   );
 }
