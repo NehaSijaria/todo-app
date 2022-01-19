@@ -2,15 +2,23 @@ import './App.css';
 import Navbar from './components/Navbar';
 import Todos from './components/Todos';
 import Footer from './components/Footer';
+import { useState } from 'react';
+
 // import Example from './components/Example';
 
 function App() {
-//passing todo parameter to deleteMe Fn in TodoItem
-  const deleteTodo = (singleTodo) => {
-    console.log('I am running on Deletion of todo', singleTodo)
-  }
 
-  const myTodos =[
+  // setTodos is to update todo 
+//passing todo argument(Actual val)to deleteMe Fn in TodoItem
+const deleteTodo = (ekTodo) => {
+  console.log('I am running on Deletion of todo', ekTodo)
+  setmyTodos(myTodos.filter((eachTodo)=>{
+    console.log('eachTodo=',eachTodo);
+    return eachTodo!==ekTodo;
+  }))
+}
+
+  const [myTodos, setmyTodos] = useState([
     {
       id:1,
       title:'Shopping',
@@ -21,7 +29,11 @@ function App() {
       title:'Cleaning',
       desc:'Job 2: Clean up the Room'
     }
-  ]
+  ])
+
+
+
+  
   return (
     <div>
       {/* sending boolean to child comp */}
