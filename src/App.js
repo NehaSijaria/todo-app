@@ -5,11 +5,11 @@ import Footer from './components/Footer';
 // import Example from './components/Example';
 
 function App() {
-
-  const deleteTodo = () => {
-    console.log('I am running on Deletion')
+//passing todo parameter to deleteMe Fn in TodoItem
+  const deleteTodo = (singleTodo) => {
+    console.log('I am running on Deletion of todo', singleTodo)
   }
-  
+
   const myTodos =[
     {
       id:1,
