@@ -19,6 +19,20 @@ const deleteTodo = (ekTodo) => {
   }))
 }
 
+//Adding Todo :
+const addTodo = (title, desc) => {
+  console.log('adding task list', title,desc);
+  // let sno = myTodos[myTodos.length-1].sno +1;
+  const nowAddTodo = {
+    // sno: sno,
+    title: title,
+    desc: desc
+  }
+  // add my new todo to the list
+  setmyTodos([...myTodos, nowAddTodo])
+  console.log(nowAddTodo)
+}
+
   const [myTodos, setmyTodos] = useState([
     {
       id:1,
@@ -29,6 +43,11 @@ const deleteTodo = (ekTodo) => {
       id:2,
       title:'Cleaning',
       desc:'Job 2: Clean up the Room'
+    },
+    {
+      id:3,
+      title:'Tracking',
+      desc:'Job 3: Rracking up the parcels'
     }
   ])
 
@@ -41,7 +60,8 @@ const deleteTodo = (ekTodo) => {
       {/* <Navbar title="TodoApps" searchBar={false}/> */}
       <Navbar title="TodoApps" number={1} />
       {/* passing todos from parent to child Todo comp */}
-      <AddTodo />
+      {/* addTodo function is sending to AddTodo Comp */}
+      <AddTodo addTodo={addTodo}/>
       <Todos allTodos={myTodos} onDelete={deleteTodo}/>
       <Footer />
       {/* <Example title="Mytitleshow" status={true} num={5}/> */}
