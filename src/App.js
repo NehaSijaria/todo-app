@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import Todos from './components/Todos';
 import Footer from './components/Footer';
 import { useState } from 'react';
+import AddTodo from './components/AddTodo';
 
 // import Example from './components/Example';
 
@@ -40,7 +41,7 @@ const deleteTodo = (ekTodo) => {
       {/* <Navbar title="TodoApps" searchBar={false}/> */}
       <Navbar title="TodoApps" number={1} />
       {/* passing todos from parent to child Todo comp */}
-    
+      <AddTodo />
       <Todos allTodos={myTodos} onDelete={deleteTodo}/>
       <Footer />
       {/* <Example title="Mytitleshow" status={true} num={5}/> */}
